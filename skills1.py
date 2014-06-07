@@ -34,8 +34,16 @@ def largest(some_list):
 print largest(numbers)    
 
 # # Write a function that takes a list of numbers and returns a new list of all those numbers divided by two.
-# def halvesies(some_list):
-#     return []
+def halvesies(some_list):
+    temp = []
+    for i in some_list:
+        return i / 2
+        temp = [] + i
+    print temp
+
+print halvesies(numbers)
+
+
 
 # # Write a function that takes a list of words and returns a list of all the lengths of those words.
 # def word_lengths(word_list):
