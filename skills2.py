@@ -1,9 +1,11 @@
 string1 = "I do not like green eggs and ham."
 list1 = [2, 5, 12, 6, 1, -5, 8, 5, 6, -2, 2, 27]
 list2 = [-5, 6, 4, 8, 15, 16, 23, 42, 2, 7]
-words = ["I", "do", "not", "like", "green", "eggs", "and", "ham", "I", "do", "not", "like", "them", "San", "I", "am"]
+words = ["I", "do", "not", "like", "green", "eggs", "and", "ham", "I", "do", "not", "like", "them", "Sam", "I", "am"]
 
 """
+Meghan
+
 Write a function that takes a string and produces a dictionary with
 all distinct elements as the keys, and the number of each element as
 the value
