@@ -4,7 +4,6 @@ list2 = [-5, 6, 4, 8, 15, 16, 23, 42, 2, 7]
 words = ["I", "do", "not", "like", "green", "eggs", "and", "ham", "I", "do", "not", "like", "them", "Sam", "I", "am"]
 
 """
-Meghan
 
 Write a function that takes a string and produces a dictionary with
 all distinct elements as the keys, and the number of each element as
@@ -12,7 +11,14 @@ the value
 Bonus: do the same for a file (i.e. twain.txt)
 """
 def count_unique(string1):
-    pass
+	words = string1.split()
+	dictionary = {}
+	for word in words:
+		# key = word
+		dictionary[word] = dictionary(word, [])
+		print dictionary
+
+count_unique(string1) 
 
 """
 Given two lists, (without using the keyword 'in' or the method 'index')
