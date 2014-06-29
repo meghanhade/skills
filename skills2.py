@@ -18,7 +18,7 @@ def count_unique(string1):
 			word_dictionary[word] += 1
 		else:
 			word_dictionary[word] = 1
-			
+	return word_dictionary
 count_unique(string1) 
 
 """
@@ -26,7 +26,10 @@ Given two lists, (without using the keyword 'in' or the method 'index')
 return a list of all common items shared between both lists
 """
 def common_items(list1, list2):
-    pass
+# def common_items(x):
+    y = list1.count(list2)
+    # print y
+common_items(list1, list2)
 
 """
 Given two lists, (without using the keyword 'in' or the method 'index')
@@ -40,7 +43,20 @@ def common_items2(list1, list2):
 Given a list of numbers, return list of number pairs that sum to zero
 """
 def sum_zero(list1):
-    pass
+    zero_sum_dict = {}
+    for number in list1:
+    	pair_number = 0 - number
+    	if pair_number in list1:
+    		zero_sum_pair_tuple = number, pair_number
+    		zero_sum_dict[number] = zero_sum_dict.get(number, zero_sum_pair_tuple)
+    zero_sum_list = []
+    for number in zero_sum_dict:
+    	tuple_pair = zero_sum_dict[number]
+    	zero_sum_list.append(tuple_pair)
+    return zero_sum_list
+
+sum_zero(list1)
+
 
 """
 Given a list of words, return a list of words with duplicates removed
