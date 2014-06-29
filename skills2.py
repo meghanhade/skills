@@ -12,15 +12,13 @@ Bonus: do the same for a file (i.e. twain.txt)
 """
 def count_unique(string1):
 	word_list = string1.split()
-	print word_list
 	word_dictionary = {}
 	for word in word_list:
 		if word_dictionary.get(word, []):
 			word_dictionary[word] += 1
 		else:
 			word_dictionary[word] = 1
-	print word_dictionary
-
+			
 count_unique(string1) 
 
 """
