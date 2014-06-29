@@ -49,11 +49,11 @@ def sum_zero(list1):
     	if pair_number in list1:
     		zero_sum_pair_tuple = number, pair_number
     		zero_sum_dict[number] = zero_sum_dict.get(number, zero_sum_pair_tuple)
-    zero_sum_list = []
+    zero_sum_pair_list = []
     for number in zero_sum_dict:
     	tuple_pair = zero_sum_dict[number]
-    	zero_sum_list.append(tuple_pair)
-    return zero_sum_list
+    	zero_sum_pair_list.append(tuple_pair)
+    return zero_sum_pair_list
 
 sum_zero(list1)
 
@@ -62,7 +62,19 @@ sum_zero(list1)
 Given a list of words, return a list of words with duplicates removed
 """
 def find_duplicates(words):
-    pass
+	words_dict = {}
+	nonrepeating_list = []
+	for word in words:
+		if words_dict.get(word, []):
+			words_dict[word] += 1
+		else:
+			words_dict[word] = 1
+	for word in words_dict:
+		nonrepeating_list.append(word)
+	print nonrepeating_list
+
+find_duplicates(words)
+
 
 """
 Given a list of words, print the words in ascending order of length
