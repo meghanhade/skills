@@ -1,7 +1,7 @@
-string1 = "I do not like green eggs and ham."
+string1 = "I I I I do  not not not not not like green eggs and ham."
 list1 = [2, 5, 12, 6, 1, -5, 8, 5, 6, -2, 2, 27]
 list2 = [-5, 6, 4, 8, 15, 16, 23, 42, 2, 7]
-words = ["I", "do", "not", "like", "green", "eggs", "and", "ham", "I", "do", "not", "like", "them", "Sam", "I", "am"]
+words = ["I", "do", "not", "like", "green", "eggs", "and", "ham", "I", "I", "I", "do", "not", "like", "them", "Sam", "I", "am"]
 
 """
 
@@ -11,12 +11,15 @@ the value
 Bonus: do the same for a file (i.e. twain.txt)
 """
 def count_unique(string1):
-	words = string1.split()
-	dictionary = {}
-	for word in words:
-		# key = word
-		dictionary[word] = dictionary(word, [])
-		print dictionary
+	word_list = string1.split()
+	print word_list
+	word_dictionary = {}
+	for word in word_list:
+		if word_dictionary.get(word, []):
+			word_dictionary[word] += 1
+		else:
+			word_dictionary[word] = 1
+	print word_dictionary
 
 count_unique(string1) 
 
