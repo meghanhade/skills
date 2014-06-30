@@ -37,8 +37,8 @@ def common_items(list1, list2):
 		if number > number_check:
 			number_check = number
 			new_repeating_numbers_list.append(number)
-		
-	print new_repeating_numbers_list
+	new_repeating_numbers_list.sort()	
+	return new_repeating_numbers_list
 
 common_items(list1, list2)
 
@@ -48,8 +48,20 @@ return a list of all common items shared between both lists. This time,
 use a dictionary as part of your solution.
 """
 def common_items2(list1, list2):
-    pass
+	repeating_numbers_dict = {}
+	repeating_numbers_list = []
+	for number in list1:
+		if list2.count(number) >= 1:
+			if repeating_numbers_dict.get(number, []):
+				repeating_numbers_dict[number] += 1
+			else:
+				repeating_numbers_dict[number] = 1
+	for number in repeating_numbers_dict:
+		repeating_numbers_list.append(number)
+	repeating_numbers_list.sort()
+	return repeating_numbers_list
 
+common_items2(list1, list2)
 """
 Given a list of numbers, return list of number pairs that sum to zero
 """
