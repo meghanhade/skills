@@ -1,7 +1,7 @@
 string1 = "I I I I do  not not not not not like green eggs and ham."
-list1 = [2, 5, 12, 6, 1, -5, 8, 5, 6, -2, 2, 27]
-list2 = [-5, 6, 4, 8, 15, 16, 23, 42, 2, 7]
-words = ["I", "do", "not", "like", "green", "eggs", "and", "ham", "I", "I", "I", "do", "not", "like", "them", "Sam", "I", "am"]
+list1 = [2, 5, 12, 6, 1, -5, 8, 5, 6, -2, 2, 27, 99, 125, -99]
+list2 = [-5, 6, 4, 8, 15, 16, 23, 42, 2, 7, 99, 125, -99]
+words = ["I", "do", "not", "like", "green", "eggs", "and", "ham", "I", "I", "I", "do", "not", "like", "them", "Sam", "I", "am", "zippitydoodah"]
 
 """
 
@@ -26,9 +26,20 @@ Given two lists, (without using the keyword 'in' or the method 'index')
 return a list of all common items shared between both lists
 """
 def common_items(list1, list2):
-# def common_items(x):
-    y = list1.count(list2)
-    # print y
+	repeating_numbers_list = []
+	for number in list1:
+		if list2.count(number) >= 1:
+			repeating_numbers_list.append(number)
+	repeating_numbers_list.sort()
+	number_check = repeating_numbers_list[0]
+	new_repeating_numbers_list = [repeating_numbers_list[0]]
+	for number in repeating_numbers_list:
+		if number > number_check:
+			number_check = number
+			new_repeating_numbers_list.append(number)
+		
+	print new_repeating_numbers_list
+
 common_items(list1, list2)
 
 """
@@ -71,7 +82,7 @@ def find_duplicates(words):
 			words_dict[word] = 1
 	for word in words_dict:
 		nonrepeating_list.append(word)
-	print nonrepeating_list
+	return nonrepeating_list
 
 find_duplicates(words)
 
@@ -80,9 +91,32 @@ find_duplicates(words)
 Given a list of words, print the words in ascending order of length
 Bonus: do it on a file instead of the list provided
 Bonus: print the words in alphabetical order in ascending order of length
-"""
-def word_length(words):
-    pass
+# """
+# def word_length(words):
+    # word_length_dict = {}
+    # for word in words:
+    # 	letter_tuple = tuple(word)
+    # 	# print word, letter_tuple
+    # 	letter_list = []
+    # 	for letter in letter_tuple:
+    # 		letter_list.append(letter)
+    # 		print letter_list
+
+
+
+    # 		# letter_count = len(letter_list)
+    # 	if word_length_dict.get(letter_count):
+    # 		# word_length_dict[letter_count] = word
+    # 		word_length_dict[letter_count].update({word})
+   	# 	else:
+   	# 		word_length_dict[letter_count] = word
+    # for word_length in word_length_dict:
+    # 		print word_length_dict[word_length]
+    # print word_length_dict
+    	
+ 
+
+# word_length(words)
 
 """
 Here's a table of English to Pirate translations
